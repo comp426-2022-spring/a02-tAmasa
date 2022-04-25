@@ -7,17 +7,13 @@ const args = (minimist)(process.argv.slice(2))
 
 const call = args.call || "-1"
 
-if(call!= "heads" && call !="tails"){
+if(call == undefined || (call!= "heads" && call !="tails")){
     console.log("Error: no input.")
-    process.exit(1)
+    console.log("Usage: node guess-flip --call=[heads|tails]")
+    
+}else{
+  console.log(flipACoin(call))
 }
-let result
-const flip = coinFlip()
-  if(call == flip){
-    result = 'win'
-  }else{
-    result = 'lose'
-  }
-console.log(`call: ${call}, flip: ${flip}, result: ${result}`)
+
 
 
