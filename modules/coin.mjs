@@ -42,13 +42,13 @@ function coinFlip() {
  */
 
 function coinFlips(flips) {
-  var results = new Array(flips)
+  var results = []
 
 //   for (var element of results) { // You can use `let` instead of `const` if you like
 //     element = coinFlip()
 // }
 
-for (let i = 0; i < results.length; i++) {
+for (let i = 0; i < flips; i++) {
   results[i] = coinFlip()
 }
 
@@ -88,7 +88,8 @@ function countFlips(array) {
       tailCount++
     }
   })
-  return ["heads: "+ headCount, "tails: "+ tailCount]
+  return { heads: headCount, tails: tailCount}
+  // return ["heads: "+ headCount, "tails: "+ tailCount]
 
   // return [`heads: ${headCount}`, `tails: ${tailCount}`]
 }
