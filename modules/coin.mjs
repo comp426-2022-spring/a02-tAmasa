@@ -106,11 +106,12 @@ function countFlips(array) {
 
 function flipACoin(call) {
   const flip = coinFlip()
-  if(call == flip){
-    return 'win'
+  if (call != flip) {
+    return {call: call, flip: flip, result: "lose"}
   }else{
-    return 'lose'
+    return {call: call, flip: flip, result: "win"}
   }
+
 }
 
 
