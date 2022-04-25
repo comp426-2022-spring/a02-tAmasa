@@ -88,7 +88,9 @@ function countFlips(array) {
       tailCount++
     }
   })
-  return [`heads: ${headCount}`, `tails: ${tailCount}`]
+  return ["heads: "+ headCount, "tails: "+ tailCount]
+
+  // return [`heads: ${headCount}`, `tails: ${tailCount}`]
 }
 
 /** Flip a coin!
@@ -103,7 +105,8 @@ function countFlips(array) {
  */
 
 function flipACoin(call) {
-  if(call == coinFlip){
+  const flip = coinFlip()
+  if(call == flip){
     return 'win'
   }else{
     return 'lose'
